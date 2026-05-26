@@ -336,7 +336,7 @@ async function verify() {
   const h = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(p));
   const hash = Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('');
   // 密码哈希，修改密码时更新此值（生成方式: 浏览器控制台执行上方 SHA-256 逻辑）
-  if (hash === '673f9954b9b7d988ab52d7409f0268ff5e208cc89ab48e0141c4776ccff3e8cd') {
+  if (hash === '158a323a7ba44870f23d96f1516dd70aa48e9a72db4ebb026b0a89e212a208ab') {
     document.getElementById('gate').style.display = 'none';
   } else {
     document.getElementById('msg').textContent = '密码错误，请重试';
